@@ -59,6 +59,10 @@ document.getElementById('data-input').innerHTML=addNews_structure(address.innerH
 function addNews_structure(address,color){
     return'<fieldset style=border-color:blue>'+
 '<legend style=color:'+color+'>'+address+'</legend>'+
+'<dinv class=add-news-header>'+
+''
+
+'</div>'+
 '<input type=color id=input-signColor onclick=runTitileColor()><input type=color id=input-bordercolor onclick=runContainerColor()><br>'+
 '<input type=text id=input-title class=input-text-data placeholder=judul><br>'+
 '<textarea id=input-data-contain class=input-prg-data placeholder=isi></textarea><br>'+
