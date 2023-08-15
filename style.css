@@ -80,6 +80,15 @@
     border-color: aqua;
 
 }
+.input-add-container{
+    border-color:aquamarine;
+    color:aqua;
+    width:87.4%;
+    height: 90px;
+    margin-top:12px;
+}
+
+
 .btn-upload{
     border-color:aqua;
     color:aqua;
@@ -122,10 +131,4 @@
     width:92.2%;
     height: 34px;
     margin-bottom: 12px;
-}
-.input-add-container{
-    border-color:aquamarine;
-    color:aqua;
-    width:78.2%;
-    height: 90px;
 }
