@@ -1,0 +1,131 @@
+.wrapper-container{
+    background-color: rgb(208, 226, 247);
+   
+}
+
+*{
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(37, 47, 61);
+    color:aqua
+
+    
+}
+
+.input-text-data{
+    width:85.2%;
+    height:46px;
+    margin-bottom: 12px;;
+    border-color:aqua
+}
+
+.input-prg-data{
+    width:85.2%;
+    height:440px;
+
+}
+
+
+.account-bar{
+    width:48.6%;
+    height: 34px;
+
+}
+.open{
+    border:0px;
+    margin-bottom: 12px;
+}
+.flex{
+    width: 98.2%;
+    height:440px;
+    overflow-y: auto;
+}
+
+.bar-btn{
+
+   
+    border:0px;
+    color:blue;
+    background-color: rgb(208, 226, 247); 
+}
+
+
+.dat-nav{
+    margin:12px;
+}
+.search-container{
+    width:75.8%;
+    height: 34px;
+
+}
+.search-btn{
+    background-color: aqua;
+    border:0px;
+    color:orangered;
+    height:34px;
+}
+.dat-nav{
+    margin-top: 0px;
+    text-align: center;
+}
+.input-text-loggin{
+    width:87.8%;
+    height:34px;
+    margin:11px;
+    border-color:aquamarine
+}
+.pass-container{
+    width:87.4%;
+    height:34px;
+    margin: 11px;
+    border-color: aqua;
+
+}
+.btn-upload{
+    border-color:aqua;
+    color:aqua;
+    background-color: blueviolet;
+    width:56px;
+    height: 34px;
+    margin-left: 13px;
+    margin-top: 12px;
+}
+.dat-private{
+    height: 470px;
+    overflow-y: auto;
+}
+.bar-menu{
+    margin-left: 79px;
+    background-color: aliceblue;
+}
+.text-market{
+    margin:12px;
+    width:92.2%;
+    height: 45px;
+   border-color: aquamarine;
+}
+.num-input{
+    width: 46%;
+    height:45px;
+    border-color:antiquewhite;
+    margin-bottom:12px;
+}
+.input-text-market{
+    width:92.2%;
+    height: 45px;
+    border-color:aquamarine
+}
+.account-input-wrapper{
+    width:97.2%;
+    height:300px;
+}
+.money-container{
+    width:92.2%;
+    height: 34px;
+    margin-bottom: 12px;
+}
+.input-add-container{
+    border-color:aquamarine;
+    color:aqua;
+    width:78.2%;
+    height: 90px;
+}
