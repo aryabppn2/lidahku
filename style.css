@@ -102,9 +102,18 @@
     height: 470px;
     overflow-y: auto;
 }
+
+.private-menu{
+  width: 45%;
+  height: 34px;
+  border-color:aqua;
+  background-color: aquamarine;
+}
 .bar-menu{
     margin-left: 79px;
     background-color: aliceblue;
+    border-color:aqua;
+    color:blue
 }
 .text-market{
     margin:12px;
