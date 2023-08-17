@@ -29,8 +29,8 @@ function structure_accountHeader(ADDRESS,PASS,Address){
 '<option style=color:lightgreen id=money-in>0</option>'+
 '<option style=color:red id=money-out>0</option>'+
 '</select>'+
-'<button onclick=connect_toAddNews() style=color:green; class=private-menu>ngomong</button>'+
-'<button onclick=connect_toMarketPage() style=color:blue; class=private-menu>market</button>'+
+'<button onclick=connect_toAddNews() style=color:aqua;background-color:orange class=private-menu>ngomong</button>'+
+'<button onclick=connect_toMarketPage() style=color:blue;background-color:whitesmoke  class=private-menu>market</button>'+
 '<div id=uploader-database class=dat-private></div>'+    
 '<div>'+
 

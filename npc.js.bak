@@ -1,0 +1,34 @@
+function NpcMovement(Xmove,moveX,Character){
+	Xmove.innerHTML=null;
+	moveX.innerHeight=Character;
+}
+
+alert('hallo')
+
+var orang_width=100+'px';
+var orang_height=100+'px';
+var orang=orang(orang_width,orang_height)
+
+funtion orang(width,height){
+	return'<img src=others.png width='+width+'height='+height+'>'
+}
+
+
+function npc_vec(){
+	var vec=[document.getElementById('10,3'),document.getElementById(10+1+',3')]
+	setTimeout(function(){
+		NpcMovement(vec[0],vec[1],orang);
+		npc_move1()
+	},1000)
+}
+
+
+function npc_vec1(){
+	var vec=[document.getElementById('11,3'),document.getElementById(11+1+',3')];
+	setTimeout(function(){
+		NpcMovement(vec[0],vec[1],orang)
+		npc_move2()
+	},1000)
+}
+
+
