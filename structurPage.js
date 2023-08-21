@@ -149,3 +149,5 @@ function getSellerData(useraddress,sellerAddress,userProduct,productPrice){
 '</select>'+'<button onclick=getDealData()>beli</button>'
 }
 
+
+
