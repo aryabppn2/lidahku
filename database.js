@@ -76,7 +76,6 @@ function connect_toDatabase1(){
     },
     num:{
         price:document.getElementById('input-product-price').value,
-        amount:document.getElementById('input-product-amount').value
     },
     des:document.getElementById('input-description-product').value
         
@@ -97,7 +96,7 @@ const dataPost={
         },
         num:{
             el:document.createElement('span'),
-            val:document.createTextNode(dataInput.num.price+'||'+dataInput.num.amount),
+            val:document.createTextNode(dataInput.num.price),
             ds:document.createElement('br')
         },
         productdes:{
@@ -145,6 +144,86 @@ dataPost.btnBuy.el.appendChild(dataPost.btnBuy.val)
 toBeranda()
 
 }
+function connection_toDatabase11(){
+    const dataInput={
+        address:{
+            username:document.getElementById('useraddress-output'),
+            productname:document.getElementById('input-product-name').value,
+            color:document.getElementById('input-sign-color').value,
+            borderColor:document.getElementById('input-borderColor').value,
+            productColor:document.getElementById('input-color').value
+        },
+        numProduct:{
+            price:document.getElementById('input-product-price').value,
+             timeType:document.getElementById('input-product-type').value
+        },
+        productdes:document.getElementById('input-description-product').value
+    
+ }
+const importData={
+    database:document.getElementById('uploader-database'),
+    datahost:document.createElement('div'),
+    datafield:document.createElement('fieldset'),
+    useraddress:{
+        el:document.createElement('legend'),
+        val:document.createTextNode(dataInput.address.username.innerHTML),
+    },
+    databody:{
+        field:document.createElement('fieldset'),
+        produtaddress:{
+            el:document.createElement('legend'),
+            val:document.createTextNode(dataInput.address.productname)
+        },
+        num:{
+            el:document.createElement('span'),
+            val:document.createTextNode(dataInput.numProduct.price+'/'+dataInput.numProduct.timeType)
+        },
+        dataDis:document.createElement('br'),
+       description:{
+        el:document.createElement('span'),
+        val:document.createTextNode(dataInput.productdes)
+       }
+
+    },
+    btnbuy:{
+        el:document.createElement('button'),
+        val:document.createTextNode('sewa')
+    }
+    
+}   
+// data setting//
+importData.datahost.setAttribute('id','sewa-'+dataInput.address.productname+'-'+dataInput.address.username.innerHTML)
+importData.btnbuy.el.setAttribute('onclick','BuyyingProduct()')
+importData.databody.num.el.setAttribute('id','berapa biaya sewa '+dataInput.address.productname+'-'+dataInput.address.username.innerHTML)
+// settingcolor/
+importData.datafield.style.borderColor=dataInput.address.borderColor;
+importData.useraddress.el.style.color=dataInput.address.color;
+importData.databody.field.style.borderColor=dataInput.address.productColor;
+importData.databody.produtaddress.el.style.color=dataInput.address.productname;
+//data impoert//
+importData.database.appendChild(importData.datahost);
+importData.datahost.appendChild(importData.datafield);
+//header//
+importData.datafield.appendChild(importData.useraddress.el);
+importData.useraddress.el.appendChild(importData.useraddress.val);
+//data body//
+importData.datafield.appendChild(importData.databody.field);
+importData.databody.field.appendChild(importData.databody.produtaddress.el);
+importData.databody.produtaddress.el.appendChild(importData.databody.produtaddress.val);
+importData.databody.field.appendChild(importData.databody.num.el);
+importData.databody.num.el.appendChild(importData.databody.num.val);
+importData.databody.field.appendChild(importData.databody.dataDis);
+importData.databody.field.appendChild(importData.databody.description.el);
+importData.databody.description.el.appendChild(importData.databody.description.val);
+importData.datafield.appendChild(importData.btnbuy.el);
+importData.btnbuy.el.appendChild(importData.btnbuy.val);
+
+toBeranda()
+
+}
+
+
+
 
 function databaseTransaction_connect(){
     const statusConfirm=confirm('penjual/pembeli')
@@ -165,6 +244,6 @@ function databaseTransaction_connect(){
            productPrice:prompt('harga barang')
         }
         document.getElementById('data-input').innerHTML=getSellerData(userData.address.innerHTML,userData.selleraddress,userData.productname,userData.productPrice) 
-    
+     
     }
 }

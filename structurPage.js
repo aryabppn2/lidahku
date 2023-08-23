@@ -119,9 +119,16 @@ function InputProductDataStructure(address,color,borderColor){
 '<input type=color id=input-color onclick=runproductcolor()><br>'+
 '<input type=text id=input-product-name class=text-market placeholder=nama-produk><br>'+
 '<input type=number id=input-product-price placeholder=harga class=num-input>'+
-'<input type=number id=input-product-amount placeholder=jumlah class=num-input><br>'+
+'<select id=input-product-type class=num-input>'+
+'<option>biasa</option</option>'+
+'<option>jam</option</option>'+
+'<option>hari</option>'+
+'<option>minggu</option>'+
+'<option>bulan</option>'+
+'<option>tahun</option>'+
+'</select><br>'+
 '<textarea id=input-description-product placeholder=deskripsi-produk class=input-text-market></textarea><br>'+
-'<button onclick=connect_toDatabase1() class=btn-upload style=color:gold>jual</button>'+
+'<button  class=btn-upload style=color:gold id=seller-btn>jual</button>'+
     '</fieldset>'
 }
 
@@ -130,9 +137,21 @@ function InputProductDataStructure(address,color,borderColor){
 function runproductcolor(){
     const inputcolor=document.getElementById('input-color').value
     const el=[document.getElementById('input-product-name'),document.getElementById('input-description-product')]
+    const productTypeInput={
+        input:document.getElementById('input-product-type').value,
+        type:'biasa'
+    }
+  if(productTypeInput.input==productTypeInput.type){
+    document.getElementById('seller-btn').setAttribute('onclick','connect_toDatabase1()')
+  }
+  else{
+    document.getElementById('seller-btn').setAttribute('onclick','connection_toDatabase11()')
+  }
+
  for(var i=0;i<=el.length;i++){
     el[i].style.color=inputcolor
  }
+
 }
 
 
