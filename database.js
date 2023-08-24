@@ -33,6 +33,7 @@ function database_connect(){
 }
 // setting data id//
 postData.data_host.setAttribute('id',datainput.title+'-'+datainput.address.innerHTML)
+postData.contain.el.setAttribute('id','isi'+datainput.title+'-'+datainput.address.innerHTML)
 postData.contain.el.setAttribute('class','flex')
 postData.data_host.style.margin='15px'
 //setting color style data//

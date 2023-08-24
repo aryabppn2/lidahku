@@ -54,7 +54,8 @@ if(PickCnfirm==true){
     dataTransaction.databaseconnect.appendChild(addData.address.el);
     addData.address.el.appendChild(addData.address.val)
 document.getElementById('money-data').innerHTML=Number(document.getElementById('money-data').innerHTML)+Number(totalAll);
-document.getElementById('money-in').innerHTML=Number(document.getElementById('money-in').innerHTML)+Number(totalAll)
+document.getElementById('money-in').innerHTML=Number(document.getElementById('money-in').innerHTML)+Number(totalAll);
+
 }
 else{
     const total=Number(productPrice)*Number(Amount)

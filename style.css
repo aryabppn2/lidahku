@@ -1,12 +1,12 @@
 .wrapper-container{
-    background-color: aqua
+    background-color:lightblue
    
 }
 
 *{
     font-family:'Times New Roman', Times, serif;
-    background-color: rgb(37, 47, 61);
-    color:aqua
+    background-color:whitesmoke;
+    color:blue
 
     
 }
@@ -14,8 +14,7 @@
 .input-text-data{
     width:85.2%;
     height:46px;
-    margin-bottom: 12px;;
-    border-color:aqua
+    margin-bottom: 12px;
 }
 
 .input-prg-data{
@@ -45,7 +44,6 @@
    
     border:0px;
     color:blue;
-    background-color:aqua; 
 }
 
 
@@ -71,18 +69,18 @@
     width:87.8%;
     height:34px;
     margin:11px;
-    border-color:aquamarine
+    border-color:blue
 }
 .pass-container{
     width:87.4%;
     height:34px;
     margin: 11px;
-    border-color: aqua;
+    border-color:red;
 
 }
 .input-add-container{
-    border-color:aquamarine;
-    color:aqua;
+    border-color:green;
+    color:gray;
     width:87.4%;
     height: 90px;
     margin-top:12px;
@@ -90,8 +88,8 @@
 
 
 .btn-upload{
-    border-color:aqua;
-    color:aqua;
+    border-color:lightblue;
+    color:lightblue;
     background-color: blueviolet;
     width:56px;
     height: 34px;
@@ -104,16 +102,16 @@
 }
 
 .private-menu{
-  width: 45%;
-  height: 34px;
-  border-color:aqua;
-  
+    margin-left: 19px;
+    border-color:aqua;
+    color:lightblue;
+    background-color:gray;
 }
 .bar-menu{
-    margin-left: 79px;
-    background-color: aliceblue;
+    margin-left: 19px;
     border-color:aqua;
-    color:blue
+    color:blue;
+    background-color: lightgray;
 }
 .text-market{
     margin:12px;

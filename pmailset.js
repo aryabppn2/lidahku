@@ -6,8 +6,28 @@ function Registered_account(){
         address:document.getElementById('input-address').value
         
     }
-   inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress,inputData.userpassword,inputData.address)
+  
+if(inputData.useraddress==""){
+    alert('mohon maaf usernam kosong')
+    console.log('usernam kosong')
+}
+else if(inputData.userpassword==""){
+    alert('mohon maaf password kosong')
+    console.log('password kosong')
+}
+else if(inputData.address==""){
+    alert('mohon maaf alamat kosong')
+    console.log('alamat kosong')
+}
+else{
+    inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress,inputData.userpassword,inputData.address)
+    document.getElementById('btn-news').setAttribute('onclick',' connect_toAddNews()')
+    document.getElementById('btn-market').setAttribute('onclick',' connect_toMarketPage()')
     toBeranda()
+    
+}
+
+    
 }
 
 function toBeranda(){
@@ -19,40 +39,46 @@ function toBeranda(){
 
 function setting_account(){
     const dataUserAppear={
-        address:document.getElementById('useraddress-output'),
-        pass:document.getElementById('user-pass')
+        useraddress:document.getElementById('useraddress-output'),
+        pass:document.getElementById('user-pass'),
+        address:document.getElementById('user-address')
     };
-    document.getElementById('data-input').innerHTML=structure_settAcount(dataUserAppear.address.innerHTML,dataUserAppear.pass.innerHTML)
+    document.getElementById('data-input').innerHTML=settAcount(dataUserAppear.useraddress.innerHTML,dataUserAppear.pass.innerHTML,dataUserAppear.address.innerHTML)
 }
+
+
+
 
 
 function settinguseraddress(){
     const settdata={
         place:document.getElementById('sett-address'),
+        dataplace:document.getElementById('useraddress-output'),
         new:prompt('username baru')
     }
     settdata.place.innerHTML=settdata.new
+    settdata.dataplace.innerHTML=settdata.new
+    document.getElementById('address-this').innerHTML=settdata.new+'@pmail'
 }
 function setPass(){
     const passdata={
         new:prompt('pasword baru'),
-        place:document.getElementById('set-pass')
+        place:document.getElementById('set-pass'),
+        dataplace:document.getElementById('user-pass')
     }
    passdata.place.innerHTML=passdata.new
+   passdata.dataplace.innerHTML=passdata.new
 
 }
 
-function settingAccount(){
-    const dataSave={
-        databaseCall:document.getElementById('private-database'),
-        address:document.getElementById('sett-address'),
-        pass:document.getElementById('set-pass'),
-        
-    }
-    dataSave.databaseCall.innerHTML=structure_accountHeader(dataSave.address.innerHTML,dataSave.pass.innerHTML,dataSave)
-        toBeranda()
-    
+
+function setaddressLoc(){
+const addressImportData=prompt('alamat baru');
+document.getElementById('set-address').innerHTML=addressImportData
+document.getElementById('user-address').innerHTML=addressImportData;
 }
+
+
 
 
 function loggin_out(){
@@ -72,7 +98,7 @@ function loggin_out(){
   '<legend style=color:'+dataUser.style.color+' onclick=followMore()>'+dataUser.dataaadrees.innerHTML+'</legend>'+
     dataUser.dataupload.innerHTML
 '</fieldset>'
-
+ toBeranda()
 }
 
 function showAll(){

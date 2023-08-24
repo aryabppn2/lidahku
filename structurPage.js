@@ -1,9 +1,10 @@
 function logiageStructure(){
-    return'<h2 style=color:aqua>login sekarang</h2> '+
+    return'<h2 style=color:blue>login sekarang</h2> '+
 '<input type=text id=input-useraddress class=input-text-loggin placeholder=username><br>'+
 '<input type=text id=input-user-pass class=pass-container placeholder=password><br>'+
 '<textarea id=input-address class=input-add-container placeholder=alamat-rumah></textarea><br>'+
-'<button onclick=Registered_account() class=btn-upload>daftar</button>'
+'<button onclick=Registered_account() class=btn-upload>daftar</button>'+
+'<button onclick=Logggin_account() class=btn-upload style=border-color:green; color:green>login</button>'
 }
 
 
@@ -17,7 +18,7 @@ function structure_accountHeader(ADDRESS,PASS,Address){
 '<legend  id=useraddress-output onclick=setting_account()>'+ADDRESS+'</legend>'+
 '<input type=color id=input-sign-color onclick=runStylecol()><input type=color id=input-borderColor onclick=runBorderColor()><br><br>'+
 '<select class=account-bar id=user-data>'+
-'<option>'+ADDRESS+'Pmail.com</option>'+
+'<option id=address-this>'+ADDRESS+'Pmail.com</option>'+
 '<option id=user-pass>'+PASS+'</option>'+
 '<option id=user-address>'+Address+'</option>'+
 '</select>'+
@@ -25,12 +26,10 @@ function structure_accountHeader(ADDRESS,PASS,Address){
 '<option>pembeli</option>'+
 '</select><button onclick=openPmail() class=open>buka</button><br>'+
 '<select id=money-list class=money-container>'+
-'<option style=color:aqua id=money-data>0</option>'+
-'<option style=color:lightgreen id=money-in>0</option>'+
+'<option style=color:blue id=money-data>0</option>'+
+'<option style=color:green id=money-in>0</option>'+
 '<option style=color:red id=money-out>0</option>'+
 '</select>'+
-'<button onclick=connect_toAddNews() style=color:aqua;background-color:orange class=private-menu>ngomong</button>'+
-'<button onclick=connect_toMarketPage() style=color:blue;background-color:whitesmoke  class=private-menu>market</button>'+
 '<div id=uploader-database class=dat-private></div>'+    
 '<div>'+
 
@@ -40,11 +39,11 @@ function structure_accountHeader(ADDRESS,PASS,Address){
 
 
 
-function structure_settAcount(username,pass){
+function settAcount(username,pass,address){
     return'<fieldset style=border-color:blue>'+
-'<fieldset style=boder-color:lightblue;color:aqua onclick=settinguseraddress() class=sett-account id=sett-address>'+username+'</fieldset><br>'+
-'<fieldset style=border-color:orange;color:lightgray id=set-pass onclick=setPass()>'+pass+'</fieldset><br>'+
-'<button onclick=settingAccount() class=btn-upload style=color:blue>setting</button>'+
+'<fieldset style=boder-color:blue;color:blue onclick=settinguseraddress() class=sett-account id=sett-address>'+username+'</fieldset><br>'+
+'<fieldset style=border-color:red;color:red id=set-pass onclick=setPass()>'+pass+'</fieldset><br>'+
+'<fieldset id=set-address style=border-color:gray; color:green onclick=setaddressLoc()>'+address+'</fieldset>'+
 '<button onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</button>'+
     '</fieldset>'
 }
@@ -215,4 +214,10 @@ function chatInputStructure(){
 
 function btn_chat(){
     return'<button onclick=backintoChat() class=btn-upload style=border-color:aqua;color:aqua>kirim</button>'
+}
+
+
+function showAll(){
+    const databeranda=document.getElementById('public-database/192.168.120.189')
+    document.getElementById('data-input').innerHTML=databeranda.innerHTML
 }
