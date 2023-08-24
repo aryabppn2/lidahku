@@ -170,3 +170,49 @@ function getSellerData(useraddress,sellerAddress,userProduct,productPrice){
 
 
 
+function jasarentStructure(username,sellername,productname,price,timeType){
+    return'<fieldset style=border-color:aqua>'+
+    '<legend id=username-address style=color:lightgreen>'+username+'</legend>'+
+    '<h2 style=color:whitesmoke id=product-name>'+productname+'</h2>'+
+    '<p style=color:orange id=product-price>'+price+'</p>'+
+    '<input type=number id=input-time placeholder= berapa-'+timeType+' class=account-bar>'+
+    '<select class=account-bar id=pick-binary>'+
+   '<option> jasa pengantaran</option>'+
+   '<option>kita kesana</option>'+
+    '</select><br>'+
+    '<button onclick=connect_transation1database() class=btn-upload> sewa</button>'+
+    '<h2 style=color:aqua>'+sellername+'</h2>'+
+    '</fieldset>'
+}
+
+
+
+function chat_pageStructure(address){
+    return'<fieldset style=border-color:lightblue class=chat-container>'+
+'<legend style=color:lightblue onclick=resChat()>'+address+'</legend>'+
+ '<div id=chat-container-database class=chat-container></div>'+
+ '<div id=chat-input-place>'+
+'<textarea id=input-chat class=input-prg placeholder=ketikan-sesuatu style=border-color:lightblue></textarea>'+
+'<button onclick=sentChat() class=btn-upload style=border-color:aqua;color:aqua>kirim</button>'+
+ '</div>'+
+    '</fieldset>'
+}
+
+
+function open_pmailStructure(address){
+    return'<fieldset style=border-color:lightblue>'+
+'<legend style=color:lightblue> '+address+'</legend>'+
+
+    '</fieldset>'
+}
+
+
+
+function chatInputStructure(){
+ return'<textarea id=input-chat class=input-prg placeholder=ketikan-sesuatu style=border-color:lightblue></textarea>'+
+ '<button onclick=sentChat() class=btn-upload style=border-color:aqua;color:aqua>kirim</button>'
+}
+
+function btn_chat(){
+    return'<button onclick=backintoChat() class=btn-upload style=border-color:aqua;color:aqua>kirim</button>'
+}

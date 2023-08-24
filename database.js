@@ -116,7 +116,7 @@ const dataPost={
 dataPost.Host.setAttribute('id','beli-'+dataInput.dataaddress.productname+'-'+dataInput.address.useraddress.innerHTML)
 dataPost.btnBuy.el.setAttribute('onclick','ProductBuy')
 dataPost.btnBuy.el.setAttribute('class','btn-upload')
-dataPost.btnBuy.el.setAttribute('onclick','databaseTransaction_connect()')
+dataPost.btnBuy.el.setAttribute('onclick','databaseTransaction_connect1()')
 
 // style//
 dataPost.useaddress.el.style.color=dataInput.address.color;
@@ -193,7 +193,7 @@ const importData={
 }   
 // data setting//
 importData.datahost.setAttribute('id','sewa-'+dataInput.address.productname+'-'+dataInput.address.username.innerHTML)
-importData.btnbuy.el.setAttribute('onclick','BuyyingProduct()')
+importData.btnbuy.el.setAttribute('onclick','RenteringProduct()')
 importData.databody.num.el.setAttribute('id','berapa biaya sewa '+dataInput.address.productname+'-'+dataInput.address.username.innerHTML)
 // settingcolor/
 importData.datafield.style.borderColor=dataInput.address.borderColor;
@@ -225,25 +225,3 @@ toBeranda()
 
 
 
-function databaseTransaction_connect(){
-    const statusConfirm=confirm('penjual/pembeli')
-    if(statusConfirm==true){
-        const getData={
-            buyyername:prompt('nama pembeli'),
-            buyyerproduct:prompt('nama barang'),
-            productPrice:prompt('harga barang'),
-            productAmount:prompt('jumlah produk')
-        }
-        getBuyyerData(getData.buyyername,getData.buyyerproduct,getData.productPrice,getData.productAmount)
-    }
-    else{
-        const userData={
-           address:document.getElementById('useraddress-output'),
-           selleraddress:prompt('nama penjual'),
-           productname:prompt('nama barang'),
-           productPrice:prompt('harga barang')
-        }
-        document.getElementById('data-input').innerHTML=getSellerData(userData.address.innerHTML,userData.selleraddress,userData.productname,userData.productPrice) 
-     
-    }
-}

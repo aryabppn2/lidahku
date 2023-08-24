@@ -79,3 +79,12 @@ function showAll(){
     const data=document.getElementById('public-database/192.168.120.189');
     document.getElementById('search-container').innerHTML=data.innerHTML
 }
+
+
+function openPmail(){
+    const pmaiAddress=document.getElementById('visitor-data').value
+    document.getElementById('search-container').innerHTML=chat_pageStructure(pmaiAddress)
+
+
+
+}

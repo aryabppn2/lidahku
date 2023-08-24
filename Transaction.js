@@ -137,5 +137,248 @@ function getDealData(){
     }
 }
 
+function databaseTransaction_connect1(){
+    const statusConfirm=confirm('penjual/pembeli')
+    if(statusConfirm==true){
+        const getData={
+            buyyername:prompt('nama pembeli'),
+            buyyerproduct:prompt('nama barang'),
+            productPrice:prompt('harga barang'),
+            productAmount:prompt('jumlah produk')
+        }
+        getBuyyerData(getData.buyyername,getData.buyyerproduct,getData.productPrice,getData.productAmount)
+    }
+    else{
+        const userData={
+           address:document.getElementById('useraddress-output'),
+           selleraddress:prompt('nama penjual'),
+           productname:prompt('nama barang'),
+           productPrice:prompt('harga barang')
+        }
+        document.getElementById('data-input').innerHTML=getSellerData(userData.address.innerHTML,userData.selleraddress,userData.productname,userData.productPrice) 
+     
+    }
+}
 
+
+
+
+
+function RenteringProduct(){
+    const confirmStatus= confirm('pemilik/penyewa')
+    if(confirmStatus==true){
+        const renterDataImport={
+            Renteraddress:prompt('nama penyewa'),
+            renterProduk:prompt('nama barang'),
+            productBugget:prompt('harga produk'),
+            productType:prompt('tipe waktu'),
+            timerent:prompt('berapa lama'),
+        }
+        getRenterData(renterDataImport.Renteraddress,renterDataImport.renterProduk,renterDataImport.productBugget,renterDataImport.productType,renterDataImport.timerent)
+    }
+    else{
+        const OwnerData={
+            useraddress:document.getElementById('useraddress-output'),
+            owneraddress:prompt('nama pemilik'),
+            userProduk:prompt('nama barang'),
+            productPrice:prompt('nama barang'),
+            timeType:prompt('tipe waktu')
+
+        }
+        const dataconnection=jasarentStructure(OwnerData.useraddress.innerHTML,OwnerData.owneraddress,OwnerData.userProduk,
+            OwnerData.productPrice,OwnerData.timeType)
+        document.getElementById('data-input').innerHTML=dataconnection
+    }
+}
+
+
+
+function getRenterData(rentername,productname,budged,typeTime,time){
+    const database=document.getElementById('money-list');
+    const money={
+        data:document.getElementById('money-data'),
+        money_in:document.getElementById('money-in')
+    }
+    const getData={
+        rentername:{
+            el:document.createElement('option'),
+            val:document.createTextNode('penyewa:'+rentername)
+        },
+      renterproduct:{
+        el:document.createElement('option'),
+        val:document.createTextNode('nama barang'+productname)
+      },
+      producPrice:{
+        el:document.createElement('option'),
+        val:document.createTextNode('harga:'+budged+'per'+typeTime)
+      },
+     time:{
+        el:document.createElement('option'),
+        val:document.createTextNode('waktu:'+time)
+     }   
+    }
+    database.appendChild(getData.rentername.el);
+    getData.rentername.el.appendChild(getData.rentername.val);
+    database.appendChild(getData.renterproduct.el);
+    getData.renterproduct.el.appendChild(getData.renterproduct.val);
+    database.appendChild(getData.producPrice.el);
+    getData.producPrice.el.appendChild(getData.producPrice.val);
+    database.appendChild(getData.time.el);
+    getData.time.el.appendChild(getData.time.val)
+
+    const PickBinaryOption=confirm('pakai jasa pengantran/tidak');
+
+    if(PickBinaryOption==true){
+        const addmoney=prompt('bayar berapa');
+        const  totalAll=Number(budged*time)+Number(addmoney)
+        const address=prompt('alamat sekarang');
+        const getdataAdd={
+            pickBudget:{
+                el:document.createElement('option'),
+                val:document.createTextNode('ongkir:'+addmoney)
+            },
+            total:{
+                el:document.createElement('option'),
+                val:document.createTextNode('total:'+totalAll)
+            },
+            address:{
+                el:document.createElement('option'),
+                va:document.createTextNode(address)
+            }
+        }
+        database.appendChild(getdataAdd.pickBudget.el);
+        getdataAdd.pickBudget.el.appendChild(getdataAdd.pickBudget.val);
+        database.appendChild(getdataAdd.total.el);
+        getdataAdd.total.el.appendChild(getdataAdd.total.val);
+        database.appendChild(getdataAdd.address.el);
+        getdataAdd.address.el.appendChild(getdataAdd.address.va)
+      money.data.innerHTML=Number(money.data.innerHTML)+Number(totalAll)
+      money.money_in.innerHTML=Number(money.money_in.innerHTML)+Number(totalAll)
+    }
+    else{
+     const total=Number(budged)*Number(time) 
+     const totalData={
+        el:document.createElement('option'),
+        val:document.createTextNode(total)
+     }
+     database.appendChild(totalData.el);
+     totalData.el.appendChild(totalData.val)
+     money.data.innerHTML=Number(money.data.innerHTML)+Number(total)
+     money.money_in.innerHTML=Number(money.money_in.innerHTML)+Number(total)
+
+    }
+}
+
+function connect_transation1database(){
+    const dataImport={
+        owneraddress:document.getElementById('username-address'),
+        productname:document.getElementById('product-name'),
+        produtprice:document.getElementById('product-price'),
+        productamount:document.getElementById('input-time').value
+    }
+ const database=document.getElementById('money-list');   
+ const getData={
+    owneraddress:{
+        el:document.createElement('option'),
+        val:document.createTextNode('nama pemilik:'+dataImport.owneraddress.innerHTML)
+    },
+    productname:{
+        el:document.createElement('option'),
+        val:document.createTextNode('nama barang:'+dataImport.productname.innerHTML)
+    },
+    productPrice:{
+        el:document.createElement('option'),
+        val:document.createTextNode('harga barang:'+dataImport.produtprice.innerHTML)
+    },
+    productamount:{
+        el:document.createElement('option'),
+        val:document.createTextNode('waktu:'+dataImport.productamount)
+    }
+ }
+database.appendChild(getData.owneraddress.el);
+getData.owneraddress.el.appendChild(getData.owneraddress.val);
+database.appendChild(getData.productname.el);
+getData.productname.el.appendChild(getData.productname.val);
+database.appendChild(getData.productPrice.el);
+getData.productPrice.el.appendChild(getData.productPrice.val);
+database.appendChild(getData.productamount.el);
+getData.productamount.el.appendChild(getData.productamount.val);
+    const pickBinary=document.getElementById('pick-binary').value;
+    const datamoney={
+        data:document.getElementById('money-data'),
+        money_out:document.getElementById('money-out')
+    }
+    if(pickBinary=='jasa pengantaran'){
+        const addmoney=prompt('biaya ongkir')
+        const totalAll=Number(dataImport.produtprice.innerHTML*dataImport.productamount)+Number(addmoney);
+        const dataAdd={
+            order:{
+                el:document.createElement('option'),
+                val:document.createTextNode(addmoney)
+            },
+            total:{
+                el:document.createElement('option'),
+                val:document.createTextNode(totalAll)
+            }
+        }
+        database.appendChild(dataAdd.order.el);
+        dataAdd.order.el.appendChild(dataAdd.order.val);
+        database.appendChild(dataAdd.total.el);
+        dataAdd.total.el.appendChild(dataAdd.total.val);
+       
+        datamoney.data.innerHTML=Number(datamoney.data.innerHTML)-Number(totalAll)
+        datamoney.money_out.innerHTML=Number(datamoney.money_out.innerHTML)+Number(totalAll)
+
+    }
+    else{
+        const total=Number(dataImport.produtprice.innerHTML)*Number(dataImport.productamount)
+        const totalget={
+            el:document.createElement('option'),
+            val:document.createTextNode('total'+total)
+        }
+        database.appendChild(totalget.el);
+        totalget.el.appendChild(totalget.val)
+
+        datamoney.data.innerHTML=Number(datamoney.data.innerHTML)-Number(total)
+        datamoney.money_out.innerHTML=Number(datamoney.money_out.innerHTML)+Number(total)
+
+    }
+}
+
+
+
+function sentChat(){
+    const chatInput={
+        address:document.getElementById('useraddress-output'),
+        chat_value:document.getElementById('input-chat').value
+    }
+    const post_chat={
+        chat_database:document.getElementById('chat-container-database'),
+        field:document.createElement('fieldset'),
+        useraddress:{
+            el:document.createElement('legend'),
+            val:document.createTextNode(chatInput.address.innerHTML)
+        },
+        chat_val:{
+            el:document.createElement('span'),
+            val:document.createTextNode(chatInput.address)
+        }
+    }
+    post_chat.field.style.borderColor='lightgreen';
+    post_chat.useraddress.el.style.color='lightgreen';
+    post_chat.chat_val.el.style.color='lightgreen';
+    
+    post_chat.chat_database.appendChild(post_chat.field);
+    post_chat.field.appendChild(post_chat.useraddress.el);
+    post_chat.useraddress.el.appendChild(post_chat.useraddress.val);
+    post_chat.chat_database.appendChild(post_chat.chat_val.el);
+    post_chat.chat_val.el.appendChild(post_chat.chat_val.val);
+    
+    document.getElementById('chat-input-place').innerHTML=btn_chat()
+
+}
+
+function backintoChat(){
+    document.getElementById('chat-input-place').innerHTML=chatInputStructure()
+}
 
