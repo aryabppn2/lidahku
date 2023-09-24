@@ -10,6 +10,7 @@ function sitDownAnimation(vecy){
 	vecy.style.backgroundSize='100px 100px';
 	vecy.innerHTML=null
 	vecy.style.backgroundRepeat='no-repeat';
+	
 }
 function standUpAnimation(vecY){
 	vecY.style.backgroundImage='url(kursi.png)';

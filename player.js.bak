@@ -6,7 +6,7 @@ function playerMove(Xmove,moveX,player){
 
 
 function sitDownAnimation(vecy){
-	vecy.style.backgroundImage='url(player.jpg)';
+	vecy.style.backgroundImage='url(Rama.png)';
 	vecy.style.backgroundSize='100px 100px';
 	vecy.innerHTML=null
 	vecy.style.backgroundRepeat='no-repeat';
