@@ -286,7 +286,78 @@ function vec_243(){
 
 
 function vec_253(){
-	var vec=[document.getElementById('25,3'),document.getElementById(25-1+',3')]
-	vec[1].setAttribute('onclick','vec_243()');
+	var vec=[document.getElementById('25,3'),document.getElementById(25+1+',3'),document.getElementById(25-1+',3')]
+	vec[2].setAttribute('onclick','vec_243()');
+	vec[1].setAttribute('onclick','vec_263()')
+	for(var i=1; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+}
+
+
+
+function vec_263(){
+	var vec=[document.getElementById('26,3'),document.getElementById(26+1+',3'),document.getElementById(26-1+',3')];
+    vec[2].setAttribute('onclick','vec_253()')
+	vec[1].setAttribute('onclick','vec_273()')
+	for(var i=0; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+}
+
+
+function vec_273(){
+	var vec=[document.getElementById('27,3'),document.getElementById(27+1+',3'),document.getElementById(27-1+',3')]
+	vec[2].setAttribute('onclick','vec_263()')
+	vec[1].setAttribute('onclick','vec_283()')
+	for(var i=1; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+	
+}
+
+function vec_283(){
+	var vec=[document.getElementById('28,3'),document.getElementById(28+1+',3'),document.getElementById(28-1+',3')]
+	vec[1].setAttribute('onclick','vec_293()')
+	vec[2].setAttribute('onclick','vec_273()')
+	for(var i=1; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+}
+
+
+
+function vec_293(){
+	var vec=[document.getElementById('29,3'),document.getElementById(29+1+',3'),document.getElementById(29-1+',3')]
+	vec[1].setAttribute('onclick','vec_303()')
+	vec[2].setAttribute('onclick','vec_283()')
+	for(var i=1; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+	
+	
+}
+
+
+
+
+function vec_303(){
+	var vec=[document.getElementById('30,3'),document.getElementById(30+1+',3'),document.getElementById(30-1+',3')]
+	vec[1].setAttribute('onclick','vec_313()');
+	vec[2].setAttribute('onclick','vec_293()');
+	for(var i=0; i<=vec.length; i++){
+		playerMove(vec[i],vec[0],player)
+	}
+	
+	
+}
+
+
+function vec_313(){
+	var vec=[document.getElementById('31,3'),document.getElementById(31-1+',3')]
+	vec[1].setAttribute('onclick','vec_303()')
 	playerMove(vec[1],vec[0],player)
+	
+	
+	
 }

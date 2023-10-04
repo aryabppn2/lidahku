@@ -27,7 +27,7 @@ function sitdown(){
 	setTimeout(function(){
 		sitDownAnimation(vecy[0])
 		vecy[1].setAttribute('onclick','stand()')
-		document.getElementById('1,4').setAttribute('onclick','call_()')
+		document.getElementById('1,2').setAttribute('onclick','call_()')
 	},1000/2)
 	
 	

@@ -1,7 +1,7 @@
 var rama_width=100+'px';
 var rama_height=100+'px'
 var person1= Rama(rama_width,rama_height);
-var person2= orang2('60px','60px');
+var person2= orang2(100+'px',100/4+'px');
 
 document.getElementById('0,3').innerHTML=person1;
 function Rama(width,height){
@@ -156,12 +156,4 @@ function npcvec15(time){
 		NpcRumahAnimation(vec[0],vec[1],person1)
 	npcvec()
 	},time)
-	
-	
-	
-	
 }
-
-
-
-

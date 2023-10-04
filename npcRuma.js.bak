@@ -1,11 +1,11 @@
 var rama_width=100+'px';
 var rama_height=100+'px'
 var person1= Rama(rama_width,rama_height);
-var person2= orang2(rama_width,rama_height);
+var person2= orang2('60px','60px');
 
 document.getElementById('0,3').innerHTML=person1;
 function Rama(width,height){
-	return'<img src=player.png width='+width+'height='+height+'>'
+	return'<img src=player.jpg width='+width+'height='+height+'>'
 }
 function orang2(width,height){
 	return'<img src=bapak.png width='+width+'height='+height+'>'
@@ -156,4 +156,8 @@ function npcvec15(time){
 		NpcRumahAnimation(vec[0],vec[1],person1)
 	npcvec()
 	},time)
+	
+	
+	
+	
 }

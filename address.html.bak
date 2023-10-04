@@ -12,6 +12,5 @@
 	<script src="npc.js"></script>
     <script src='house.js'></script>
 	<script src='npcRuma.js'></script>
-	<script src='private.js'></script>
 </body>
 </html>

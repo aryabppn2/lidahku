@@ -2,6 +2,7 @@ var player_width=100+'px';
 var player_height=100+'px';
 var player= player(player_width,player_height)
 
+
 function player(width,height){
 	return'<img src=Rama.png width='+width+'height='+height+'>'
 	
@@ -42,7 +43,16 @@ function house(position,stylebg,door,doorSize){
 
 
 
-
+function Toko(position,doorPos,wallstyle,doorobj){
+	position[0].style.backgroundColor=wallstyle;
+	position[1].style.backgroundColor=wallstyle;
+	position[2].style.backgroundColor=wallstyle;
+	doorPos[0].style.backgroundImage=doorobj;
+	doorPos[1].style.backgroundImage=doorobj
+	
+	
+	
+}
 
 
 function starGame(){
@@ -53,19 +63,30 @@ function starGame(){
 	document.getElementById('4,4').setAttribute('onclick','getIntoHouse()');
 	document.getElementById('12,4').setAttribute('onclick','getInhouse1()');
 	document.getElementById('10,4').setAttribute('onclick','getInhouse2()')
+	document.getElementById('26,2').setAttribute('onclick','getInPrivate()')
 	
 	
 	tree(
-	[document.getElementById('7,3'),document.getElementById('8,3'),document.getElementById('17,3'),document.getElementById('18,3')],'url(pohon.png)'
+	[document.getElementById('7,3'),document.getElementById('8,3'),document.getElementById('17,3'),document.getElementById('18,3'),
+	document.getElementById('29,3')],'url(pohon.png)'
 	)
 	Garage(
 	[document.getElementById('0,3'),document.getElementById('1,3')],'lightgray'
 	)
 	
+	Toko(
+	 [document.getElementById('24,3'),document.getElementById('25,3'),document.getElementById('28,3')],
+	 [document.getElementById('26,3'),document.getElementById('27,3')],'gray','url(door.jpg)'
+	 
+	 )
+	
 	 house([document.getElementById('4,3'),document.getElementById('10,3'),document.getElementById('12,3'),document.getElementById('15,3'),document.getElementById('20,3'),document.getElementById('5,3'),document.getElementById('6,3'),document.getElementById('3,3'),document.getElementById('2,3'),document.getElementById('4,4'),document.getElementById('5,4'),document.getElementById('6,4'),document.getElementById('3,4'),document.getElementById('2,4'),
 	 document.getElementById('9,3'),document.getElementById('11,3'),document.getElementById('9,4'),document.getElementById('10,4'),document.getElementById('11,4'),
-	 document.getElementById('13,3'),document.getElementById('14,3'),document.getElementById('12,4'),document.getElementById('20,3'),document.getElementById('13,4'),document.getElementById('15,4'),document.getElementById('14,4'),document.getElementById('16,3'),document.getElementById('16,4'),document.getElementById('19,3'),document.getElementById('20,4'),document.getElementById('19,4'),document.getElementById('21,3'),document.getElementById('21,4')
+	 document.getElementById('13,3'),document.getElementById('14,3'),document.getElementById('12,4'),document.getElementById('20,3'),document.getElementById('13,4'),document.getElementById('15,4'),document.getElementById('14,4'),document.getElementById('16,3'),document.getElementById('16,4'),document.getElementById('19,3'),document.getElementById('20,4'),document.getElementById('19,4'),document.getElementById('21,3'),document.getElementById('21,4'),document.getElementById('22,4'),document.getElementById('22,3')
 	 ],'whitesmoke','url(door.jpg)','100px 100px')
+	 
+	 
+	 
 	 
 }
 
@@ -177,6 +198,8 @@ function canvaGame(WIDTH,HEIGHT,BGSTYLE){
 	+WIDTH+'></td><td id=19,3 style=width:'+WIDTH+
 	'></td><td id=20,3 style=width:'+WIDTH+'></td><td id=21,3 style=width:'+WIDTH+'></td><td id=22,3 style=width:'+WIDTH+'></td><td id=23,3 style=width:'+WIDTH+
 	'></td>'+'<td id=24,3 style=width:'+WIDTH+'></td><td id=25,3 style=width:'+WIDTH+'></td>'+
+	'<td id=26,3 style=width:'+WIDTH+
+	'></td><td id=27,3 style=width:'+WIDTH+'></td><td id=28,3 style=width:'+WIDTH+'></td><td id=29,3 style=width:'+WIDTH+'></td>'+'<td id=30,3 style=width:'+WIDTH+'></td><td id=31,3 style=width:'+WIDTH+'></td>'+
 
 	'</tr>'+
 	'<tr>'+
@@ -192,7 +215,8 @@ function canvaGame(WIDTH,HEIGHT,BGSTYLE){
 	+WIDTH+'>'+soil()+'</td><td id=19,2 style=width:'+WIDTH+
 	'>'+soil()+'</td><td id=20,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=21,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=22,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=23,2 style=width:'+WIDTH+
 	'>'+soil()+'</td>'+'<td id=24,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=25,2 style=width:'+WIDTH+'>'+soil()+'</td>'+
-
+	'<td id=26,2 style=width:'+WIDTH+
+	'>'+soil()+'</td><td id=27,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=28,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=29,2 style=width:'+WIDTH+'>'+soil()+'</td>'+'<td id=30,2 style=width:'+WIDTH+'>'+soil()+'</td><td id=31,2 style=width:'+WIDTH+'>'+soil()+'</td>'+
 	'</tr>'+
 	'</table>'
 	
